@@ -1,3 +1,5 @@
-== Langton's ant
+# Langton's ant
 
-https://en.wikipedia.org/wiki/Langton's_ant
+Simple implementation, with Swing interface and arbitrary ant configuration.
+
+Explained - [wiki link](https://en.wikipedia.org/wiki/Langton's_ant).
