@@ -5,7 +5,7 @@ import java.awt.Color
 import scala.util.Random._
 
 class Settings(pointStates: List[PointState]) {
-  val startState = pointStates.head
+  val startPointState = pointStates.head
 
   def previousValue(before: PointState): PointState = pointStates((pointStates.indexOf(before) - 1 + pointStates.length) % pointStates.length)
   def nextValue(after: PointState): PointState = pointStates((pointStates.indexOf(after) + 1) % pointStates.length)

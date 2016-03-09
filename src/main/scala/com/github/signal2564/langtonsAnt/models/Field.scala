@@ -1,7 +1,7 @@
 package com.github.signal2564.langtonsAnt.models
 
 class Field(val width: Int, val height: Int, settings: Settings) {
-  private val points = Array.tabulate(width, height) { (i, j) => (Point(i, j), settings.startState) }
+  private val points = Array.tabulate(width, height) { (i, j) => (Point(i, j), settings.startPointState) }
   private var ant = Ant(Point(width / 2, height / 2), Direction.Up)
 
   def collectForPaint: (List[(Point, PointState)], Ant) = (points.flatten.toList, ant)

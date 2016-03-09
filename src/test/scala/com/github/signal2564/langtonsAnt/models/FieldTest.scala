@@ -18,8 +18,8 @@ class FieldTest extends Specification {
     val field = new Field(2, 2, settings)
     val maybeDiff = field.tick()
     val pointsToBecome =
-      List((Point(0, 0), settings.startState), (Point(0, 1), settings.startState),
-        (Point(1, 0), settings.startState), (Point(1, 1), settings.startState))
+      List((Point(0, 0), settings.startPointState), (Point(0, 1), settings.startPointState),
+        (Point(1, 0), settings.startPointState), (Point(1, 1), settings.startPointState))
 
     if (maybeDiff.nonEmpty) {
       val diff = maybeDiff.get
@@ -36,8 +36,8 @@ class FieldTest extends Specification {
     val settings = Settings("LR")
     val field = new Field(2, 2, settings)
     val pointsToBecome =
-      List((Point(0, 0), settings.startState), (Point(0, 1), settings.startState),
-        (Point(1, 0), settings.startState), (Point(1, 1), settings.nextValue(settings.startState)))
+      List((Point(0, 0), settings.startPointState), (Point(0, 1), settings.startPointState),
+        (Point(1, 0), settings.startPointState), (Point(1, 1), settings.nextValue(settings.startPointState)))
 
     field.applyDiffsForward(List(Diff(Direction.Left)))
     val (points, ant) = field.collectForPaint
@@ -55,8 +55,8 @@ class FieldTest extends Specification {
     val settings = Settings("LR")
     val field = new Field(2, 2, settings)
     val pointsToBecome =
-      List((Point(0, 0), settings.startState), (Point(0, 1), settings.startState),
-        (Point(1, 0), settings.startState), (Point(1, 1), settings.nextValue(settings.startState)))
+      List((Point(0, 0), settings.startPointState), (Point(0, 1), settings.startPointState),
+        (Point(1, 0), settings.startPointState), (Point(1, 1), settings.nextValue(settings.startPointState)))
 
     field.tick()
     val (points, ant) = field.collectForPaint

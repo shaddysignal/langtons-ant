@@ -20,12 +20,12 @@ object App extends SimpleSwingApplication {
       text = s"$start 0"
       preferredSize = new Dimension(150, preferredSize.getHeight.toInt)
     }
-    val widthField = newDigitField(150, 5)
-    val heightField = newDigitField(150, 5)
+    val widthField = newDigitField(200, 5)
+    val heightField = newDigitField(200, 5)
     val settingsField = new TextField("RL", 10) {
       listenTo(keys)
       reactions += {
-        case e: KeyTyped => if (!List('R', 'L').contains(e.char)) e.consume()
+        case e: KeyTyped => if (!List('R', 'L', 'U', 'N').contains(e.char)) e.consume()
       }
     }
     val startButton = new Button("remake") {
@@ -42,7 +42,6 @@ object App extends SimpleSwingApplication {
           buttonPanel.contents.clear()
           buttonPanel.contents += pauseButton
 
-          boxPanel.revalidate()
           boxPanel.repaint()
 
           timer.restart()
